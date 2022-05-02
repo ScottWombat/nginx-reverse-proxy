@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  proxy:
+    build: .
+    networks:
+      - app1
+      - app2
+    ports:
+      - 80:80
+      - 443:443
+networks:
+  app1:
+    external: true
+    name: app1_default
+  app2:
+    external: true
+    name: app2_default
